@@ -1,0 +1,429 @@
+/* GLOBAL DARK MODE */
+
+body.dark-mode {
+  background: #020817;
+  color: #f8fafc;
+}
+
+/* PAGE BACKGROUNDS */
+
+body.dark-mode .page,
+body.dark-mode .content {
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.15) 0%, transparent 35%),
+    linear-gradient(180deg, #020817 0%, #071226 100%);
+}
+
+/* SIDEBAR */
+
+body.dark-mode .sidebar {
+  background: linear-gradient(180deg, #020617 0%, #071226 100%);
+}
+
+/* TOPBAR */
+
+body.dark-mode .topbar {
+  background: rgba(15, 23, 42, 0.92);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* MAIN CARDS */
+
+body.dark-mode .settings-card,
+body.dark-mode .notification-card,
+body.dark-mode .stat-card,
+body.dark-mode .activity-box,
+body.dark-mode .activity-row,
+body.dark-mode .rail-map,
+body.dark-mode .backup-box,
+body.dark-mode .sidebar-user-card {
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #f8fafc;
+}
+
+/* ALL HEADINGS */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f8fafc !important;
+}
+
+/* NORMAL TEXT */
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode th {
+  color: #e2e8f0;
+}
+
+/* MUTED / SECONDARY TEXT */
+
+body.dark-mode .welcome-text,
+body.dark-mode .setting-row p,
+body.dark-mode .notification-content p,
+body.dark-mode .activity-row p,
+body.dark-mode .stat-card p {
+  color: #94a3b8 !important;
+}
+
+/* LINKS */
+
+body.dark-mode a {
+  color: #f8fafc;
+}
+
+/* MENU ITEMS */
+
+body.dark-mode .menu-item {
+  color: rgba(255,255,255,0.82);
+}
+
+body.dark-mode .menu-item svg {
+  color: rgba(255,255,255,0.7);
+}
+
+body.dark-mode .menu-item:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* ACTIVE MENU ITEM */
+
+body.dark-mode .menu-item.active {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: white;
+}
+
+/* INPUTS */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* PLACEHOLDERS */
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #64748b;
+}
+
+/* BUTTONS */
+
+body.dark-mode button {
+  color: white;
+}
+
+/* ICONS */
+
+body.dark-mode svg {
+  color: inherit;
+}
+
+/* BORDERS */
+
+body.dark-mode .setting-row,
+body.dark-mode .device-row {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* SCROLLBAR */
+
+body.dark-mode ::-webkit-scrollbar {
+  width: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #020817;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 999px;
+}
+
+/* ================================================= */
+/* FAULT DASHBOARD DARK MODE */
+/* ================================================= */
+
+body.dark-mode .fault-page {
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.15) 0%, transparent 35%),
+    linear-gradient(180deg, #020817 0%, #071226 100%);
+}
+
+body.dark-mode .fault-topbar,
+body.dark-mode .fault-panel,
+body.dark-mode .fault-stat-card,
+body.dark-mode .severity-card,
+body.dark-mode .critical-table-card,
+body.dark-mode .fault-activity-row,
+body.dark-mode .critical-row,
+body.dark-mode .critical-table td {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+body.dark-mode .fault-topbar h1,
+body.dark-mode .fault-panel h2,
+body.dark-mode .critical-row h3,
+body.dark-mode .fault-activity-row h3,
+body.dark-mode .critical-title-wrap h2,
+body.dark-mode .critical-summary,
+body.dark-mode .critical-table td,
+body.dark-mode .critical-table th {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .fault-stat-card p,
+body.dark-mode .critical-row p,
+body.dark-mode .fault-activity-row p,
+body.dark-mode .fault-operator,
+body.dark-mode .critical-summary button {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode .critical-table {
+  background: transparent !important;
+}
+
+body.dark-mode .active-pill {
+  background: rgba(225, 29, 72, 0.18);
+}
+
+/* ================================================= */
+/* TOOL TRACKER DARK MODE */
+/* ================================================= */
+
+body.dark-mode .tool-page {
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.15) 0%, transparent 35%),
+    linear-gradient(180deg, #020817 0%, #071226 100%);
+}
+
+body.dark-mode .tool-table-panel,
+body.dark-mode .tool-summary-panel,
+body.dark-mode .tool-info-panel,
+body.dark-mode .tool-actions-panel,
+body.dark-mode .tool-categories-panel,
+body.dark-mode .tool-scan-card,
+body.dark-mode .tool-table td,
+body.dark-mode .tool-table th {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+body.dark-mode .tool-header h1,
+body.dark-mode .tool-panel-title h2,
+body.dark-mode .tool-info-panel h2,
+body.dark-mode .tool-actions-panel h2,
+body.dark-mode .tool-categories-panel h2,
+body.dark-mode .tool-name-cell strong,
+body.dark-mode .tool-summary-mini h3,
+body.dark-mode .scan-info-row h3,
+body.dark-mode .tool-table td,
+body.dark-mode .tool-table th {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .tool-header p,
+body.dark-mode .tool-name-cell span,
+body.dark-mode .scan-info-row p,
+body.dark-mode .tool-action-card p,
+body.dark-mode .tool-category-card p {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode .tool-table {
+  border-color: rgba(255,255,255,0.06);
+}
+
+body.dark-mode .tool-table td {
+  background: rgba(15, 23, 42, 0.92) !important;
+}
+
+body.dark-mode .tool-action-card,
+body.dark-mode .tool-category-card,
+body.dark-mode .tool-summary-mini {
+  background: rgba(15, 23, 42, 0.92) !important;
+}
+
+/* ================================================= */
+/* NOTIFICATIONS DARK MODE */
+/* ================================================= */
+
+body.dark-mode .notification-stat-card,
+body.dark-mode .notification-card {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+body.dark-mode .notifications-header h2,
+body.dark-mode .notification-content h3,
+body.dark-mode .notification-stat-card h2,
+body.dark-mode .notification-right {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .notification-content p,
+body.dark-mode .notification-stat-card p {
+  color: #94a3b8 !important;
+}
+
+/* ================================================= */
+/* SIDEBARS */
+/* ================================================= */
+
+body.dark-mode .fault-sidebar,
+body.dark-mode .tool-sidebar,
+body.dark-mode .sidebar {
+  background: linear-gradient(180deg, #020617 0%, #071226 100%);
+}
+
+/* ================================================= */
+/* USER CARDS */
+/* ================================================= */
+
+body.dark-mode .tool-user-card,
+body.dark-mode .fault-user-card,
+body.dark-mode .sidebar-user-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ================================================= */
+/* ADMIN PANEL DARK MODE */
+/* ================================================= */
+
+body.dark-mode .admin-page {
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.15) 0%, transparent 35%),
+    linear-gradient(180deg, #020817 0%, #071226 100%);
+}
+
+/* SIDEBAR */
+
+body.dark-mode .admin-sidebar {
+  background: linear-gradient(180deg, #020617 0%, #071226 100%);
+}
+
+body.dark-mode .admin-user-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* TOPBAR */
+
+body.dark-mode .admin-topbar {
+  background: rgba(15, 23, 42, 0.92);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+body.dark-mode .admin-topbar h1,
+body.dark-mode .admin-top-user {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .admin-welcome {
+  color: #94a3b8 !important;
+}
+
+/* STAT CARDS */
+
+body.dark-mode .admin-stat-card {
+  background: rgba(15, 23, 42, 0.92) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+body.dark-mode .admin-stat-text p {
+  color: #94a3b8 !important;
+}
+
+/* TABS */
+
+body.dark-mode .admin-tab {
+  background: rgba(15, 23, 42, 0.92);
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+body.dark-mode .admin-tab.active {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: white;
+}
+
+/* TABLE CARD */
+
+body.dark-mode .admin-table-card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* TABLE HEADER */
+
+body.dark-mode .admin-table-header h2 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .admin-table-header p {
+  color: #94a3b8 !important;
+}
+
+/* TABLE */
+
+body.dark-mode .admin-user-table td {
+  background: rgba(15, 23, 42, 0.92) !important;
+  color: #f8fafc !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+body.dark-mode .admin-user-table th {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode .admin-user-table td:first-child,
+body.dark-mode .admin-user-table td:last-child {
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+/* ACTION BUTTONS */
+
+body.dark-mode .admin-actions button {
+  background: rgba(255,255,255,0.06);
+  color: #f8fafc;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* VIEW ALL BUTTON */
+
+body.dark-mode .admin-view-all {
+  color: #60a5fa;
+}
+
+/* FIX STAT NUMBER BACKGROUND GLOW */
+
+body.dark-mode .fault-stat-card h2 {
+  background: transparent !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+body.dark-mode .fault-stat-card .blue,
+body.dark-mode .fault-stat-card .red,
+body.dark-mode .fault-stat-card .green,
+body.dark-mode .fault-stat-card .yellow {
+  background: transparent !important;
+}
+

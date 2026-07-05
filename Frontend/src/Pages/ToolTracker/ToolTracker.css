@@ -1,0 +1,942 @@
+/* =========================================================
+   ToolTracker.css
+   Organised and labelled stylesheet
+   ========================================================= */
+
+/* =========================================================
+   1. Imports, Reset and Theme Variables
+   ========================================================= */
+
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+   * {
+     box-sizing: border-box;
+   }
+   
+   :root {
+     --tool-blue: #2563eb;
+     --tool-dark: #031b4e;
+     --tool-text: #0f172a;
+     --tool-muted: #64748b;
+     --tool-green: #22c55e;
+     --tool-red: #ef233c;
+     --tool-yellow: #f59e0b;
+   }
+   
+   html,
+   body,
+   #root {
+     width: 100%;
+     height: 100%;
+     min-height: 100vh;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     font-family: 'Inter', sans-serif;
+   }
+   
+   /* =========================================================
+      2. Page Layout
+      ========================================================= */
+   
+   .tool-page {
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     overflow: hidden;
+     background:
+       radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+       linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+   }
+   
+   /* =========================================================
+      3. Sidebar
+      ========================================================= */
+   
+   .tool-sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #031b4e 0%, #00112d 100%);
+    padding: 22px 18px;
+    flex-shrink: 0;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+   }
+   
+   .tool-sidebar::after {
+     content: "";
+     position: absolute;
+     left: -80px;
+     bottom: -80px;
+     width: 320px;
+     height: 320px;
+     pointer-events: none;
+     background: radial-gradient(
+       circle,
+       rgba(37, 99, 235, 0.35) 0%,
+       rgba(37, 99, 235, 0.15) 35%,
+       transparent 70%
+     );
+   }
+   
+   .tool-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+   }
+   
+   .tool-logo-wrap svg {
+    color: white;
+    background: rgba(37, 99, 235, 0.35);
+    padding: 18px;
+    border-radius: 28px;
+    width: 82px;
+    height: 82px;
+   }
+   
+   .tool-sidebar h2 {
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 28px;
+    position: relative;
+    z-index: 2;
+   }
+   
+   .tool-sidebar-train {
+     position: absolute;
+     left: -20px;
+     bottom: 70px;
+     z-index: 0;
+     width: 230px;
+     opacity: 0.85;
+     object-fit: contain;
+     pointer-events: none;
+     filter:
+       drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35))
+       brightness(1.05);
+   }
+   
+
+  
+  
+  
+   /* =========================================================
+      4. Sidebar Navigation
+      ========================================================= */
+   
+  
+      .tool-menu {
+        margin-top: 10px;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .tool-menu-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 9px 0;
+        padding: 13px 16px;
+        border-radius: 16px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.88);
+        cursor: pointer;
+        transition: 0.2s ease;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      
+      .tool-menu-item span {
+        color: inherit;
+      }
+      
+      .tool-menu-item svg {
+        color: rgba(255, 255, 255, 0.75);
+        min-width: 24px;
+      }
+      
+      .tool-menu-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      .tool-menu-item.active {
+        background: linear-gradient(90deg, #2563eb, #1d4ed8);
+        color: white;
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+      }
+      
+   
+   .notification-item {
+     position: relative;
+   }
+   
+   .tool-notification-badge {
+    margin-left: auto;
+    background: #2563eb;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  }
+
+   /* =========================================================
+      5. Sidebar User Card and Logout
+      ========================================================= */
+   
+      .tool-user-card {
+        margin-top: auto;
+        height: 72px;
+        border-radius: 18px;
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .tool-user-card h3 {
+        margin: 0;
+        font-size: 15px;
+        color: white;
+      }
+      
+      .tool-user-card p {
+        margin: 3px 0 0;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.75);
+      }
+      
+      .tool-user-card p span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #22c55e;
+        border-radius: 50%;
+        margin-right: 6px;
+      }
+   
+   .tool-logout-button {
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.16);
+    color: #f87171;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .tool-logout-button:hover {
+    background: #ef4444;
+    color: white;
+  }
+  
+  .tool-logout-button svg {
+    color: currentColor;
+  }
+   
+   /* =========================================================
+      6. Main Content Area
+      ========================================================= */
+   
+   .tool-content {
+     flex: 1;
+     min-width: 0;
+     padding: 38px 34px 34px;
+     overflow-y: auto;
+   }
+   
+   .tool-header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 32px;
+   }
+   
+   .tool-header h1 {
+     margin: 0;
+     color: var(--tool-text);
+     font-size: 34px;
+     font-weight: 800;
+   }
+   
+   .tool-header p {
+     margin: 8px 0 0;
+     color: #334155;
+     font-size: 17px;
+     font-weight: 500;
+   }
+   
+   /* =========================================================
+      7. Scan Card
+      ========================================================= */
+   
+   .tool-scan-card {
+     min-width: 460px;
+     height: 88px;
+     padding: 16px 22px;
+     display: flex;
+     align-items: center;
+     gap: 16px;
+     background: rgba(255, 255, 255, 0.9);
+     border: 1px solid rgba(15, 23, 42, 0.08);
+     border-radius: 18px;
+     box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+   }
+   
+   .scan-mini-icon {
+     width: 52px;
+     height: 52px;
+     display: grid;
+     place-items: center;
+     color: #2563eb;
+     background: #eff6ff;
+     border-radius: 14px;
+   }
+   
+   .tool-scan-card p {
+     margin: 0;
+     color: var(--tool-muted);
+     font-size: 13px;
+     font-weight: 700;
+   }
+   
+   .tool-scan-card h3 {
+     margin: 4px 0 0;
+     color: var(--tool-text);
+     font-size: 15px;
+     font-weight: 800;
+   }
+   
+   .tool-scan-card button {
+     height: 52px;
+     margin-left: auto;
+     padding: 0 22px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     color: white;
+     background: linear-gradient(90deg, #2563eb, #1d4ed8);
+     border: none;
+     border-radius: 12px;
+     box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+     font-size: 16px;
+     font-weight: 800;
+     cursor: pointer;
+   }
+   
+   /* =========================================================
+      8. Main Grid and Shared Panels
+      ========================================================= */
+   
+   .tool-main-grid {
+     display: grid;
+     grid-template-columns: 1.65fr 1fr;
+     gap: 24px;
+   }
+   
+   .tool-table-panel,
+   .tool-summary-panel,
+   .tool-info-panel,
+   .tool-actions-panel,
+   .tool-categories-panel {
+     background: rgba(255, 255, 255, 0.9);
+     border: 1px solid rgba(15, 23, 42, 0.08);
+     border-radius: 24px;
+     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+   }
+   
+   .tool-table-panel {
+     padding: 22px;
+   }
+   
+   .tool-panel-title {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 18px;
+   }
+   
+   .tool-panel-title h2 {
+     margin: 0;
+     color: var(--tool-text);
+     font-size: 23px;
+     font-weight: 800;
+   }
+   
+   .tool-panel-title span {
+     color: #2563eb;
+     font-size: 14px;
+     font-weight: 800;
+   }
+   
+   .tool-panel-title.small svg {
+     width: 52px;
+     height: 52px;
+     padding: 10px;
+     color: #2563eb;
+     background: #eff6ff;
+     border-radius: 14px;
+   }
+   
+   /* =========================================================
+      9. Tool Table
+      ========================================================= */
+   
+   .tool-table {
+     width: 100%;
+     overflow: hidden;
+     border: 1px solid rgba(15, 23, 42, 0.1);
+     border-collapse: separate;
+     border-spacing: 0;
+     border-radius: 14px;
+   }
+   
+   .tool-table th {
+     padding: 18px 20px;
+     color: #334155;
+     background: rgba(248, 250, 252, 0.75);
+     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+     font-size: 13px;
+     font-weight: 800;
+     text-align: left;
+     text-transform: uppercase;
+   }
+   
+   .tool-table td {
+     padding: 14px 20px;
+     color: var(--tool-text);
+     background: white;
+     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+     font-size: 15px;
+     font-weight: 600;
+   }
+   
+   .tool-table tr:last-child td {
+     border-bottom: none;
+   }
+   
+   .tool-name-cell {
+     display: flex;
+     align-items: center;
+     gap: 18px;
+   }
+   
+   .tool-name-cell strong {
+     display: block;
+     margin-bottom: 4px;
+     color: var(--tool-text);
+     font-size: 16px;
+   }
+   
+   .tool-name-cell span {
+     color: var(--tool-muted);
+     font-size: 13px;
+     font-weight: 500;
+   }
+   
+   .tool-icon-box {
+     width: 52px;
+     height: 52px;
+     display: grid;
+     place-items: center;
+     border-radius: 12px;
+   }
+   
+   .tool-icon-box.detected {
+     color: #1d4ed8;
+     background: #eff6ff;
+   }
+   
+   .tool-icon-box.missing {
+     color: #ef233c;
+     background: #fff1f2;
+   }
+   
+   .tool-status {
+     display: inline-flex;
+     align-items: center;
+     gap: 10px;
+     font-weight: 800;
+   }
+   
+   .tool-status.detected {
+     color: #16a34a;
+   }
+   
+   .tool-status.missing {
+     color: #dc2626;
+   }
+   
+   /* =========================================================
+      10. Right Column and Summary Cards
+      ========================================================= */
+   
+   .tool-right-column {
+     display: grid;
+     grid-template-rows: auto 1fr;
+     gap: 18px;
+   }
+   
+   .tool-summary-panel {
+     padding: 22px;
+   }
+   
+   .tool-summary-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 14px;
+   }
+   
+   .tool-summary-mini {
+     min-height: 146px;
+     padding: 18px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     border-radius: 16px;
+     text-align: center;
+   }
+   
+   .tool-summary-mini .summary-icon {
+     width: 42px;
+     height: 42px;
+     margin: 0 auto 12px;
+     display: grid;
+     place-items: center;
+     background: white;
+     border-radius: 12px;
+   }
+   
+   .tool-summary-mini h3 {
+     margin: 0;
+     font-size: 34px;
+     font-weight: 800;
+   }
+   
+   .tool-summary-mini p {
+     margin: 8px 0 0;
+     font-size: 14px;
+     font-weight: 800;
+   }
+   
+   .tool-summary-mini.detected {
+     color: #16a34a;
+     background: linear-gradient(135deg, #ffffff, #f0fdf4);
+     border: 1px solid rgba(34, 197, 94, 0.18);
+   }
+   
+   .tool-summary-mini.missing {
+     color: #dc2626;
+     background: linear-gradient(135deg, #ffffff, #fff1f2);
+     border: 1px solid rgba(239, 35, 60, 0.18);
+   }
+   
+   .tool-summary-mini.total {
+     color: #2563eb;
+     background: linear-gradient(135deg, #ffffff, #eff6ff);
+     border: 1px solid rgba(37, 99, 235, 0.18);
+   }
+   
+   /* =========================================================
+      11. Scan Information Panel
+      ========================================================= */
+   
+   .tool-info-panel {
+     padding: 24px;
+   }
+   
+   .tool-info-panel h2 {
+     margin: 0 0 22px;
+     color: var(--tool-text);
+     font-size: 20px;
+     font-weight: 800;
+   }
+   
+   .scan-info-row {
+     display: flex;
+     align-items: center;
+     gap: 16px;
+     margin-bottom: 20px;
+   }
+   
+   .scan-info-row svg {
+     width: 48px;
+     height: 48px;
+     padding: 10px;
+     color: #2563eb;
+     background: #eff6ff;
+     border-radius: 12px;
+   }
+   
+   .scan-info-row p {
+     margin: 0;
+     color: var(--tool-muted);
+     font-size: 13px;
+     font-weight: 700;
+   }
+   
+   .scan-info-row h3 {
+     margin: 4px 0 0;
+     color: var(--tool-text);
+     font-size: 15px;
+     font-weight: 800;
+   }
+   
+   /* =========================================================
+      12. Action Cards
+      ========================================================= */
+   
+   .tool-actions-panel {
+     margin-top: 24px;
+     padding: 22px;
+   }
+   
+   .tool-actions-panel h2,
+   .tool-categories-panel h2 {
+     margin: 0 0 18px;
+     color: var(--tool-text);
+     font-size: 20px;
+     font-weight: 800;
+   }
+   
+   .tool-actions-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 18px;
+   }
+   
+   .tool-action-card {
+     min-height: 112px;
+     padding: 20px;
+     display: grid;
+     grid-template-columns: 56px 1fr 42px;
+     align-items: center;
+     gap: 16px;
+     border-radius: 16px;
+   }
+   
+   .tool-action-card.report {
+     background: linear-gradient(135deg, #ffffff, #fff1f2);
+     border: 1px solid rgba(239, 35, 60, 0.18);
+   }
+   
+   .tool-action-card.instructions {
+     background: linear-gradient(135deg, #ffffff, #eff6ff);
+     border: 1px solid rgba(37, 99, 235, 0.18);
+   }
+   
+   .tool-action-card.stock {
+     background: linear-gradient(135deg, #ffffff, #f0fdf4);
+     border: 1px solid rgba(34, 197, 94, 0.18);
+   }
+   
+   .action-icon {
+     width: 56px;
+     height: 56px;
+     display: grid;
+     place-items: center;
+     background: rgba(255, 255, 255, 0.75);
+     border-radius: 14px;
+   }
+   
+   .report .action-icon {
+     color: #dc2626;
+   }
+   
+   .instructions .action-icon {
+     color: #2563eb;
+   }
+   
+   .stock .action-icon {
+     color: #16a34a;
+   }
+   
+   .tool-action-card h3 {
+     margin: 0;
+     color: var(--tool-text);
+     font-size: 15px;
+     font-weight: 800;
+   }
+   
+   .tool-action-card p {
+     margin: 8px 0 0;
+     color: #334155;
+     font-size: 14px;
+     line-height: 21px;
+     font-weight: 500;
+   }
+   
+   .tool-action-card button {
+     width: 42px;
+     height: 42px;
+     display: grid;
+     place-items: center;
+     background: rgba(255, 255, 255, 0.65);
+     border: 1px solid rgba(15, 23, 42, 0.12);
+     border-radius: 12px;
+     cursor: pointer;
+   }
+   
+   .report button {
+     color: #dc2626;
+   }
+   
+   .instructions button {
+     color: #2563eb;
+   }
+   
+   .stock button {
+     color: #16a34a;
+   }
+   
+   /* =========================================================
+      13. Category Cards
+      ========================================================= */
+   
+   .tool-categories-panel {
+     margin-top: 24px;
+     padding: 22px;
+   }
+   
+   .tool-categories-grid {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap: 16px;
+   }
+   
+   .tool-category-card {
+     min-height: 74px;
+     padding: 16px;
+     display: flex;
+     align-items: center;
+     gap: 16px;
+     border-radius: 14px;
+   }
+   
+   .tool-category-card h3 {
+     margin: 0;
+     font-size: 14px;
+     font-weight: 800;
+   }
+   
+   .tool-category-card p {
+     margin: 4px 0 0;
+     font-size: 13px;
+     font-weight: 700;
+   }
+   
+   .blue-category {
+     color: #2563eb;
+     background: linear-gradient(135deg, #ffffff, #eff6ff);
+     border: 1px solid rgba(37, 99, 235, 0.18);
+   }
+   
+   .purple-category {
+     color: #7c3aed;
+     background: linear-gradient(135deg, #ffffff, #f5f3ff);
+     border: 1px solid rgba(124, 58, 237, 0.18);
+   }
+   
+   .green-category {
+     color: #16a34a;
+     background: linear-gradient(135deg, #ffffff, #f0fdf4);
+     border: 1px solid rgba(34, 197, 94, 0.18);
+   }
+   
+   .orange-category {
+     color: #ea580c;
+     background: linear-gradient(135deg, #ffffff, #fff7ed);
+     border: 1px solid rgba(234, 88, 12, 0.18);
+   }
+   
+   .gray-category {
+     color: #334155;
+     background: linear-gradient(135deg, #ffffff, #f8fafc);
+     border: 1px solid rgba(15, 23, 42, 0.12);
+   }
+   
+   /* =========================================================
+      14. Mobile Sidebar Controls
+      ========================================================= */
+   
+   .mobile-menu-btn,
+   .close-sidebar-btn,
+   .sidebar-overlay {
+     display: none;
+   }
+   
+   @media (max-width: 768px) {
+     .mobile-menu-btn {
+       width: 42px;
+       height: 42px;
+       margin-bottom: 12px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       color: white;
+       background: #2563eb;
+       border: none;
+       border-radius: 12px;
+       font-size: 22px;
+       cursor: pointer;
+     }
+   
+     .tool-sidebar {
+       position: fixed;
+       top: 0;
+       left: -280px;
+       z-index: 2000;
+       width: 260px;
+       height: 100vh;
+       transition: left 0.3s ease;
+     }
+   
+     .tool-sidebar.mobile-open {
+       left: 0;
+     }
+   
+     .close-sidebar-btn {
+       display: block;
+       margin-left: auto;
+       margin-bottom: 18px;
+       color: white;
+       background: none;
+       border: none;
+       font-size: 24px;
+       cursor: pointer;
+     }
+   
+     .sidebar-overlay {
+       position: fixed;
+       inset: 0;
+       z-index: 999;
+       display: block;
+       background: rgba(0, 0, 0, 0.45);
+     }
+   }
+   
+   /* =========================================================
+      15. Mobile Layout
+      ========================================================= */
+   
+   @media (max-width: 768px) {
+     html,
+     body,
+     #root {
+       height: auto;
+       overflow-x: hidden;
+     }
+   
+     .tool-page {
+       height: auto;
+       flex-direction: column;
+       overflow-x: hidden;
+     }
+   
+     .tool-content {
+       width: 100%;
+       padding: 18px;
+       overflow-x: hidden;
+     }
+   
+     .tool-header {
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 16px;
+       margin-bottom: 22px;
+     }
+   
+     .tool-header h1 {
+       font-size: 28px;
+       line-height: 34px;
+     }
+   
+     .tool-header p {
+       font-size: 14px;
+       line-height: 22px;
+     }
+   
+     .tool-scan-card {
+       width: 100%;
+       min-width: unset;
+       height: auto;
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 14px;
+       padding: 18px;
+     }
+   
+     .tool-scan-card button {
+       width: 100%;
+       justify-content: center;
+     }
+   
+     .tool-main-grid {
+       grid-template-columns: 1fr;
+       gap: 18px;
+     }
+   
+     .tool-right-column {
+       grid-template-rows: auto;
+     }
+   
+     .tool-summary-grid,
+     .tool-actions-grid,
+     .tool-categories-grid {
+       grid-template-columns: 1fr;
+     }
+   
+     .tool-action-card {
+       min-height: auto;
+       grid-template-columns: 56px 1fr;
+     }
+   
+     .tool-action-card button {
+       width: 100%;
+       grid-column: span 2;
+     }
+   
+     .tool-table-panel {
+       padding: 16px;
+       overflow-x: auto;
+     }
+   
+     .tool-table {
+       min-width: 720px;
+     }
+   
+     .tool-table-panel,
+     .tool-summary-panel,
+     .tool-info-panel,
+     .tool-actions-panel,
+     .tool-categories-panel {
+       width: 100%;
+       border-radius: 20px;
+     }
+   
+     .tool-user-card {
+       margin-top: 24px;
+     }
+   }
+   

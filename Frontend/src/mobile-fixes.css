@@ -1,0 +1,696 @@
+/* Mobile responsive fixes added by ChatGPT
+   Keeps the desktop design, but prevents overlapping, oversized cards, and
+   horizontal overflow on phones. */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f8fbff;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+
+  body,
+  #root {
+    border: 0 !important;
+    text-align: left;
+  }
+
+  .page,
+  .fault-page,
+  .tool-page,
+  .admin-page,
+  .ar-page {
+    width: 100% !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .content,
+  .fault-content,
+  .tool-content,
+  .admin-content,
+  .materials-content,
+  .report-new-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 100dvh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 18px 16px calc(96px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .mobile-menu-btn {
+    position: relative !important;
+    flex: 0 0 52px !important;
+    width: 52px !important;
+    height: 52px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 0 !important;
+    border-radius: 18px !important;
+    background: #2563eb !important;
+    color: #fff !important;
+    font-size: 28px !important;
+    line-height: 1 !important;
+    z-index: 20 !important;
+  }
+
+  .topbar,
+  .fault-topbar,
+  .tool-topbar,
+  .admin-topbar,
+  .materials-topbar {
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: max(16px, env(safe-area-inset-top)) 0 18px !important;
+    margin: 0 0 16px !important;
+    display: grid !important;
+    grid-template-columns: 56px minmax(0, 1fr) !important;
+    gap: 14px !important;
+    align-items: start !important;
+    background: transparent !important;
+    position: relative !important;
+  }
+
+  .topbar > div:first-of-type,
+  .fault-top-left,
+  .tool-topbar > div:first-of-type,
+  .admin-topbar > div:first-of-type,
+  .materials-topbar > div:first-of-type {
+    min-width: 0 !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+  }
+
+  .topbar h1,
+  .fault-topbar h1,
+  .tool-topbar h1,
+  .admin-topbar h1,
+  .materials-topbar h1,
+  .rail-page .topbar h1 {
+    margin: 8px 0 0 !important;
+    font-size: clamp(30px, 10vw, 44px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -1.5px !important;
+    overflow-wrap: anywhere !important;
+    max-width: 100% !important;
+  }
+
+  .admin-welcome,
+  .section-heading {
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    margin: 0 0 8px !important;
+  }
+
+  .admin-top-user {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+    align-self: center !important;
+    max-width: calc(100vw - 98px) !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 !important;
+  }
+
+  .admin-top-user span {
+    max-width: 42vw !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+  }
+
+  .admin-top-user svg {
+    width: 34px !important;
+    height: 34px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .upper-section,
+  .fault-main-grid,
+  .tool-main-grid,
+  .settings-grid,
+  .rail-summary-grid,
+  .materials-summary-grid,
+  .tool-summary-grid,
+  .tool-actions-grid,
+  .tool-categories-grid,
+  .admin-stats-grid,
+  .stats-section,
+  .fault-stats-section,
+  .notification-stats {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .activity-box,
+  .map-panel,
+  .dashboard-card,
+  .stat-card,
+  .fault-stat-card,
+  .fault-panel,
+  .critical-table-card,
+  .admin-stat-card,
+  .admin-table-card,
+  .settings-card,
+  .notification-card,
+  .notification-list-card,
+  .rail-card,
+  .materials-card,
+  .materials-table-card,
+  .tool-table-panel,
+  .tool-summary-card,
+  .tool-action-card,
+  .tool-category-card,
+  .report-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 22px !important;
+    border-radius: 26px !important;
+    overflow: hidden !important;
+  }
+
+  .stat-card,
+  .fault-stat-card,
+  .admin-stat-card,
+  .notification-card,
+  .rail-card,
+  .tool-summary-card,
+  .materials-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: left !important;
+    min-height: 170px !important;
+  }
+
+  .stat-icon,
+  .fault-stat-icon,
+  .admin-stat-icon,
+  .settings-icon,
+  .notification-icon,
+  .rail-icon,
+  .tool-summary-icon,
+  .materials-icon {
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+    border-radius: 20px !important;
+    margin: 0 0 18px !important;
+    display: grid !important;
+    place-items: center !important;
+  }
+
+  .stat-card p,
+  .fault-stat-card p,
+  .admin-stat-text p,
+  .notification-card p,
+  .rail-card p,
+  .tool-summary-card p,
+  .materials-card p {
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+    margin: 0 0 10px !important;
+    text-align: left !important;
+  }
+
+  .stat-card h2,
+  .fault-stat-card h2,
+  .admin-stat-text h2,
+  .notification-card h2,
+  .rail-card h2,
+  .tool-summary-card h2,
+  .materials-card h2 {
+    font-size: clamp(48px, 18vw, 76px) !important;
+    line-height: 0.9 !important;
+    margin: 0 0 14px !important;
+    text-align: left !important;
+  }
+
+  .stat-card button,
+  .fault-stat-card button,
+  .view-under,
+  .admin-view-all {
+    align-self: flex-start !important;
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+  }
+
+  .activity-row,
+  .fault-activity-row,
+  .task-row,
+  .notification-item,
+  .device-row,
+  .setting-row,
+  .critical-row {
+    min-width: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 14px !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+  }
+
+  .activity-row > div:last-child,
+  .fault-activity-row > div:last-child,
+  .task-row > div,
+  .notification-content,
+  .setting-row > div,
+  .device-row > div,
+  .critical-row > div {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .activity-row h3,
+  .fault-activity-row h3,
+  .task-row h3,
+  .notification-content h3,
+  .critical-row h3,
+  .settings-card h2,
+  .setting-row h3,
+  .device-row h3 {
+    font-size: clamp(18px, 5.4vw, 24px) !important;
+    line-height: 1.1 !important;
+    margin: 0 0 4px !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .activity-row p,
+  .fault-activity-row p,
+  .task-row p,
+  .notification-content p,
+  .critical-row p,
+  .settings-card p,
+  .setting-row p,
+  .device-row p {
+    font-size: clamp(14px, 4.2vw, 18px) !important;
+    line-height: 1.25 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .activity-icon,
+  .fault-activity-icon {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    font-size: 26px !important;
+  }
+
+  .rail-map,
+  .rail-map img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+  }
+
+  table,
+  .critical-table,
+  .admin-user-table,
+  .tool-table,
+  .materials-table {
+    width: 100% !important;
+    min-width: 640px !important;
+    font-size: 14px !important;
+  }
+
+  .critical-table-card,
+  .admin-table-card,
+  .tool-table-panel,
+  .materials-table-card {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .critical-table-header,
+  .admin-table-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .report-fault-btn,
+  .create-user-button,
+  .backup-box button,
+  .device-row button {
+    width: 100% !important;
+    min-height: 52px !important;
+    border-radius: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .report-fault-btn {
+    margin-top: 14px !important;
+  }
+
+  .settings-card-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 12px !important;
+  }
+
+  .setting-row,
+  .device-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .switch,
+  .encrypted-badge,
+  .device-row button {
+    align-self: flex-start !important;
+  }
+
+  .admin-tabs {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .admin-tab {
+    width: 100% !important;
+  }
+
+  .report-new-content {
+    justify-content: flex-start !important;
+  }
+
+  .report-container {
+    padding: 20px !important;
+  }
+
+  .report-top h1 {
+    font-size: 28px !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    padding-inline: 56px !important;
+  }
+
+  .report-group label {
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  .severity-buttons {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .ar-page {
+    overflow-y: auto !important;
+    padding-bottom: calc(84px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .ar-topbar,
+  .ar-engineer-bar {
+    height: auto !important;
+    min-height: 64px !important;
+    padding: 12px 14px !important;
+    gap: 10px !important;
+  }
+
+  .ar-topbar h1 {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+  }
+
+  .ar-engineer-left {
+    min-width: 0 !important;
+    font-size: 15px !important;
+  }
+
+  .ar-engineer-left strong {
+    display: block !important;
+    max-width: 48vw !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .ar-launch-panel,
+  .ar-launch-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .ar-launch-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .ar-camera-container {
+    min-height: 62dvh !important;
+    overflow: hidden !important;
+  }
+
+  .fault-box {
+    left: 5% !important;
+    right: 5% !important;
+    top: 24% !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .fault-line,
+  .tool-line {
+    display: none !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .content,
+  .fault-content,
+  .tool-content,
+  .admin-content,
+  .materials-content,
+  .report-new-content {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .activity-box,
+  .map-panel,
+  .dashboard-card,
+  .stat-card,
+  .fault-stat-card,
+  .fault-panel,
+  .critical-table-card,
+  .admin-stat-card,
+  .admin-table-card,
+  .settings-card,
+  .notification-card,
+  .notification-list-card,
+  .rail-card,
+  .materials-card,
+  .materials-table-card,
+  .tool-table-panel,
+  .tool-summary-card,
+  .tool-action-card,
+  .tool-category-card {
+    padding: 18px !important;
+    border-radius: 24px !important;
+  }
+
+  .admin-top-user span {
+    max-width: 36vw !important;
+  }
+}
+
+
+/* Extra mobile-only fixes: no sideways scrolling, cleaner cards, map popups, and Settings menu button */
+@media (max-width: 768px) {
+  html, body, #root { max-width: 100%; overflow-x: hidden !important; }
+  * { box-sizing: border-box; }
+
+  /* Settings page: make the hamburger visible and stop the title from sitting off-screen */
+  .page .topbar .mobile-menu-btn { display: inline-flex !important; grid-column: 1 !important; grid-row: 1 !important; }
+  .page .topbar { padding-left: 0 !important; padding-right: 0 !important; }
+  .page .topbar h1 { margin-left: 0 !important; }
+
+  /* Dashboard maintenance tasks: status stays inside the card and text wraps cleanly */
+  .dashboard-card { overflow: visible !important; }
+  .dashboard-card > h2 { font-size: 26px !important; line-height: 1.1 !important; margin-bottom: 18px !important; }
+  .task-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 12px !important;
+    overflow: hidden !important;
+  }
+  .task-info { min-width: 0 !important; }
+  .task-info h3 { overflow-wrap: anywhere !important; word-break: normal !important; hyphens: auto !important; }
+  .task-info p { overflow-wrap: anywhere !important; }
+  .task-status { min-width: 0 !important; max-width: 128px !important; }
+  .task-status select {
+    max-width: 128px !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 0 10px !important;
+    border-radius: 14px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+  }
+
+  /* Admin panel: convert tables into vertical cards on mobile instead of sideways scrolling */
+  .admin-table-card { overflow-x: hidden !important; }
+  .admin-user-table,
+  .admin-user-table thead,
+  .admin-user-table tbody,
+  .admin-user-table tr,
+  .admin-user-table th,
+  .admin-user-table td {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .admin-user-table { border-spacing: 0 !important; font-size: 15px !important; }
+  .admin-user-table thead { display: none !important; }
+  .admin-user-table tr {
+    margin: 0 0 12px !important;
+    padding: 16px !important;
+    border: 1px solid rgba(148, 163, 184, 0.22) !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,0.9) !important;
+  }
+  .admin-user-table td {
+    border: 0 !important;
+    padding: 7px 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+  .admin-user-table td:nth-child(1)::before { content: "User: "; color: #64748b; font-weight: 800; }
+  .admin-user-table td:nth-child(2)::before { content: "Role: "; color: #64748b; font-weight: 800; }
+  .admin-user-table td:nth-child(3)::before { content: "Status: "; color: #64748b; font-weight: 800; }
+  .admin-user-table td:nth-child(4)::before { content: "Last seen: "; color: #64748b; font-weight: 800; }
+  .admin-user-table td:nth-child(5)::before { content: "Actions: "; color: #64748b; font-weight: 800; }
+  .admin-actions { justify-content: flex-start !important; }
+
+  /* Fault dashboard: turn critical table into stacked cards, no horizontal pan */
+  .critical-table-card { overflow-x: hidden !important; }
+  .critical-table,
+  .critical-table thead,
+  .critical-table tbody,
+  .critical-table tr,
+  .critical-table th,
+  .critical-table td {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .critical-table { border-spacing: 0 !important; font-size: 15px !important; }
+  .critical-table thead { display: none !important; }
+  .critical-table tr {
+    margin: 0 0 12px !important;
+    padding: 16px !important;
+    border: 1px solid rgba(244, 63, 94, 0.16) !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,0.94) !important;
+  }
+  .critical-table td {
+    border: 0 !important;
+    padding: 7px 0 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+  .critical-table td:nth-child(1)::before { content: "Fault: "; color: #64748b; font-weight: 800; }
+  .critical-table td:nth-child(2)::before { content: "Location: "; color: #64748b; font-weight: 800; }
+  .critical-table td:nth-child(3)::before { content: "Platform: "; color: #64748b; font-weight: 800; }
+  .critical-table td:nth-child(4)::before { content: "Reported by: "; color: #64748b; font-weight: 800; }
+  .critical-table td:nth-child(5)::before { content: "Time: "; color: #64748b; font-weight: 800; }
+  .critical-table td:nth-child(6)::before { content: "Status: "; color: #64748b; font-weight: 800; }
+  .critical-table td:nth-child(7)::before { content: ""; }
+  .table-fault-name { display: inline-flex !important; width: auto !important; min-width: 0 !important; padding: 0 !important; background: transparent !important; border: 0 !important; box-shadow: none !important; }
+  .critical-table button { width: 100% !important; min-height: 42px !important; margin-top: 6px !important; }
+
+  /* Rail map: keep alert popups inside the card and stop them overlapping off-screen */
+  .rail-map-panel, .rail-alerts-card { overflow: hidden !important; }
+  .rail-map-header { display: grid !important; grid-template-columns: 1fr !important; gap: 12px !important; align-items: start !important; }
+  .rail-map-header button { width: 100% !important; min-height: 54px !important; }
+  .rail-map-container { overflow: hidden !important; min-height: 360px !important; border-radius: 22px !important; }
+  .rail-map-image { height: 440px !important; object-fit: cover !important; object-position: center !important; }
+  .map-alert-pin { transform: translate(-50%, -50%) scale(0.82) !important; }
+  .map-alert-popup {
+    width: 150px !important;
+    max-width: 150px !important;
+    padding: 12px !important;
+    border-radius: 16px !important;
+    transform: translate(-50%, -112%) !important;
+  }
+  .map-alert-popup h3 { font-size: 15px !important; line-height: 1.15 !important; overflow-wrap: anywhere !important; }
+  .map-alert-popup p { font-size: 13px !important; line-height: 1.2 !important; }
+  .map-alert-popup span { font-size: 12px !important; padding: 6px 10px !important; }
+  .rail-alert-item { display: grid !important; grid-template-columns: 48px minmax(0, 1fr) !important; gap: 12px !important; align-items: center !important; }
+  .rail-alert-item h3, .rail-alert-item p { overflow-wrap: anywhere !important; }
+}
+
+@media (max-width: 390px) {
+  .task-row { grid-template-columns: 1fr !important; }
+  .task-status, .task-status select { max-width: 100% !important; }
+  .map-alert-popup { width: 132px !important; max-width: 132px !important; }
+  .rail-map-image { height: 400px !important; }
+}
+
+
+/* Report fault page: true fullscreen form on mobile */
+@media (max-width: 768px) {
+  .report-full-page { display:block!important; width:100vw!important; min-height:100dvh!important; padding:0!important; margin:0!important; }
+  .report-full-page > .sidebar, .report-full-page > .sidebar.mobile-open, .report-full-page > .sidebar-overlay, .report-full-page .mobile-menu-btn { display:none!important; width:0!important; min-width:0!important; padding:0!important; margin:0!important; }
+  .report-full-page .report-new-content { width:100vw!important; max-width:100vw!important; min-height:100dvh!important; padding:0!important; margin:0!important; display:block!important; }
+  .report-full-page .report-container { width:100vw!important; max-width:100vw!important; min-height:100dvh!important; padding:24px 20px calc(42px + env(safe-area-inset-bottom))!important; margin:0!important; border-radius:0!important; box-shadow:none!important; overflow:visible!important; }
+}

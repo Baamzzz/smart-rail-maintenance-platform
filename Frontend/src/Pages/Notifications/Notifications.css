@@ -1,0 +1,585 @@
+/* =========================================================
+   Notifications.css
+   Purpose: Organised and labelled stylesheet for consistent UI.
+
+   Sections:
+   - Notification stats
+   - Notification list
+   - Notification cards
+   - Mobile rules
+   - Consistency overrides
+   ========================================================= */
+
+/* =========================================================
+   01. IMPORTS & GLOBAL SETUP
+   ========================================================= */
+
+/* =========================================================
+   07. STATS
+   ========================================================= */
+   .notification-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 32px 34px 10px;
+  }
+  
+  .notification-stat-card {
+    height: 170px;
+    border-radius: 24px;
+    padding: 22px;
+    background: rgba(0, 0, 0, 0.88);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .notification-stat-card h2 {
+    margin: 8px 0;
+    font-size: 54px;
+    font-weight: 800;
+  }
+  
+  .notification-stat-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  .notification-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 12px;
+  }
+  
+  .notification-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .notification-icon.critical {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+  
+  .notification-icon.warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+  
+  .notification-icon.success {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+  }
+  
+  .notification-icon.info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+  }
+  
+  
+  /* =========================================================
+     04. CONTENT
+     ========================================================= */
+  .notifications-section {
+    padding: 20px 34px 34px;
+  }
+  
+  .notifications-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  
+  .notifications-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-dark);
+  }
+  
+  .notifications-header button {
+    border: none;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+  }
+  
+  .notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  
+  /* =========================================================
+     08. NOTIFICATION CARDS
+     ========================================================= */
+  .notification-card {
+    min-height: 92px;
+    border-radius: 22px;
+    background: rgba(0, 0, 0, 0.92);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  
+    transition: 0.2s ease;
+  }
+  
+  .notification-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .notification-type {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    color: white;
+  }
+  
+  .notification-type svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .notification-type.critical {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+  
+  .notification-type.warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+  
+  .notification-type.success {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+  }
+  
+  .notification-type.info {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+  }
+  
+  .notification-content {
+    flex: 1;
+  }
+  
+  .notification-content h3 {
+    margin: 0 0 6px;
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 800;
+  }
+  
+  .notification-content p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .notification-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .notification-right svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .critical-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fff1f2 100%);
+  }
+  
+  .warning-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+  }
+  
+  .success-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  }
+  
+  .info-card {
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+  }
+  
+  .notification-stat-card.critical-card h2 {
+    color: #ef4444 !important;
+  }
+  
+  .notification-stat-card.warning-card h2 {
+    color: #f59e0b !important;
+  }
+  
+  .notification-stat-card.success-card h2 {
+    color: #22c55e !important;
+  }
+  
+  .notification-stat-card.info-card h2 {
+    color: #2563eb !important;
+  }
+  
+  /* =========================================================
+     Consistent UI System Overrides
+     Drop this at the END of each page CSS file, or import once
+     globally after the page CSS files.
+     ========================================================= */
+  
+  :root {
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --dark-blue: #031b4e;
+    --sidebar-end: #00112d;
+    --page-bg-top: #f8fbff;
+    --page-bg-bottom: #eef5ff;
+    --surface: rgba(255, 255, 255, 0.9);
+    --surface-strong: rgba(255, 255, 255, 0.94);
+    --border-soft: rgba(255, 255, 255, 0.6);
+    --border-muted: rgba(148, 163, 184, 0.22);
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.08);
+    --shadow-sidebar: 10px 0 30px rgba(0, 0, 0, 0.2);
+    --radius-lg: 24px;
+    --radius-xl: 28px;
+    --content-pad: 34px;
+    --topbar-height: 88px;
+  }
+  
+  html,
+  body,
+  #root {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .page,
+  .admin-page,
+  .fault-page,
+  .rail-page {
+    background:
+      radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+      linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg-bottom) 100%) !important;
+  }
+  
+  .sidebar,
+  .admin-sidebar,
+  .fault-sidebar {
+    width: 260px !important;
+    padding: 22px 18px !important;
+    background: linear-gradient(180deg, var(--dark-blue) 0%, var(--sidebar-end) 100%) !important;
+    box-shadow: var(--shadow-sidebar) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .logo-wrap,
+  .admin-logo-wrap,
+  .fault-logo-wrap {
+    margin-top: 8px !important;
+    margin-bottom: 18px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  .logo-wrap svg,
+  .admin-logo-wrap svg,
+  .fault-logo-wrap svg {
+    width: 82px !important;
+    height: 82px !important;
+    padding: 18px !important;
+    border-radius: 28px !important;
+    background: rgba(37, 99, 235, 0.35) !important;
+    color: white !important;
+  }
+  
+  .sidebar h2,
+  .admin-sidebar h2,
+  .fault-sidebar h2 {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 28px !important;
+    color: white !important;
+  }
+  
+  .menu-item,
+  .admin-menu-item,
+  .fault-menu-item {
+    min-height: 48px !important;
+    margin: 9px 0 !important;
+    padding: 13px 16px !important;
+    border-radius: 16px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    text-decoration: none !important;
+  }
+  
+  .menu-item:hover,
+  .admin-menu-item:hover,
+  .fault-menu-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+  }
+  
+  .menu-item.active,
+  .admin-menu-item.active,
+  .fault-menu-item.active {
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark)) !important;
+    color: rgb(2, 2, 2) !important;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35) !important;
+  }
+  
+  .content,
+  .admin-content,
+  .fault-content,
+  .report-new-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow-y: auto !important;
+  }
+  
+  .topbar,
+  .admin-topbar,
+  .fault-topbar {
+    height: var(--topbar-height) !important;
+    padding: 0 var(--content-pad) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+  }
+  
+  .topbar h1,
+  .admin-topbar h1,
+  .fault-topbar h1,
+  .report-top h1,
+  .rail-map-header h2,
+  .panel-title h2,
+  .settings-card-header h2,
+  .notifications-header h2,
+  .admin-table-header h2 {
+    color: var(--text-dark) !important;
+    font-weight: 800 !important;
+  }
+  
+  .stat-card,
+  .admin-stat-card,
+  .fault-stat-card,
+  .notification-stat-card,
+  .rail-summary-card,
+  .settings-card,
+  .report-container,
+  .rail-map-panel,
+  .rail-alerts-card,
+  .fault-panel,
+  .critical-table-card,
+  .admin-table-card,
+  .notification-card {
+    background: var(--surface) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-card) !important;
+  }
+  
+  .stats-section,
+  .admin-stats-grid,
+  .fault-stats-section,
+  .notification-stats,
+  .rail-summary-grid {
+    gap: 24px !important;
+    padding: 32px var(--content-pad) 0 !important;
+  }
+  
+  .stat-card,
+  .admin-stat-card,
+  .fault-stat-card,
+  .notification-stat-card,
+  .rail-summary-card {
+    min-height: 160px !important;
+    padding: 22px !important;
+  }
+  
+  .stat-card h2,
+  .admin-stat-text h2,
+  .fault-stat-card h2,
+  .notification-stat-card h2,
+  .rail-summary-card h2,
+  .severity-card h2 {
+    font-size: 52px !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+    margin: 8px 0 !important;
+  }
+  
+  .stat-card p,
+  .admin-stat-text p,
+  .fault-stat-card p,
+  .notification-stat-card p,
+  .rail-summary-card p,
+  .settings-card-header p,
+  .notification-content p,
+  .rail-alert-item p,
+  .report-group label {
+    color: var(--text-muted);
+  }
+  
+  button,
+  .create-user-button,
+  .report-fault-btn,
+  .notifications-header button,
+  .rail-map-header button,
+  .device-row button,
+  .backup-box button,
+  .submit-btn {
+    border-radius: 14px !important;
+    font-weight: 700 !important;
+    transition: 0.2s ease !important;
+  }
+  
+  .create-user-button,
+  .report-fault-btn,
+  .notifications-header button,
+  .rail-map-header button,
+  .device-row button,
+  .backup-box button,
+  .submit-btn {
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark)) !important;
+    color: white !important;
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24) !important;
+  }
+  
+  .create-user-button:hover,
+  .report-fault-btn:hover,
+  .notifications-header button:hover,
+  .rail-map-header button:hover,
+  .device-row button:hover,
+  .backup-box button:hover,
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.28) !important;
+  }
+  
+  .report-new-content {
+    padding: var(--content-pad) !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    background:
+      radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+      linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg-bottom) 100%) !important;
+  }
+  
+  .report-container {
+    max-width: 620px !important;
+    padding: 34px !important;
+  }
+  
+  .report-top h1 {
+    font-size: 28px !important;
+  }
+  
+  .report-group label {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+  }
+  
+  .tool-input,
+  .report-group select,
+  .location-box,
+  .report-group textarea,
+  .settings-select {
+    border: 1px solid #dbe2ea !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    font-size: 14px !important;
+  }
+  
+  .tool-input,
+  .report-group select,
+  .location-box {
+    height: 48px !important;
+  }
+  
+  .submit-btn {
+    height: 52px !important;
+    font-size: 16px !important;
+  }
+  
+  
+  /* =========================================================
+     90. MOBILE
+     ========================================================= */
+  @media (max-width: 1100px) {
+    .stats-section,
+    .admin-stats-grid,
+    .fault-stats-section,
+    .notification-stats,
+    .rail-summary-grid,
+    .settings-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  
+    .rail-layout,
+    .fault-main-grid,
+    .upper-section {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar,
+    .admin-sidebar,
+    .fault-sidebar {
+      width: 86px !important;
+      padding: 18px 10px !important;
+    }
+  
+    .menu-item span,
+    .admin-menu-item span,
+    .fault-menu-item span,
+    .sidebar h2,
+    .admin-sidebar h2,
+    .fault-sidebar h2 {
+      display: none !important;
+    }
+  
+    .topbar,
+    .admin-topbar,
+    .fault-topbar {
+      padding: 0 18px !important;
+    }
+  
+    .stats-section,
+    .admin-stats-grid,
+    .fault-stats-section,
+    .notification-stats,
+    .rail-summary-grid,
+    .settings-grid {
+      grid-template-columns: 1fr !important;
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+    }
+  }
+  

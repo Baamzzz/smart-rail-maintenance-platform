@@ -1,0 +1,379 @@
+/* =========================================================
+   RailMap.css
+   Clearly organised and labelled stylesheet
+   ========================================================= */
+
+/* =========================================================
+   1. Page Wrapper
+   ========================================================= */
+
+   .rail-page {
+    min-height: 100vh;
+  }
+  
+  /* =========================================================
+     2. Summary Cards Grid
+     ========================================================= */
+  
+     .rail-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding: 30px 30px 42px;
+  }
+  
+  .rail-summary-card {
+    padding: 26px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  }
+  
+  .rail-summary-card h2 {
+    margin: 20px 0 8px;
+    font-size: 52px;
+    font-weight: 800;
+  }
+  
+  .rail-summary-card p {
+    color: #64748b;
+    font-weight: 600;
+  }
+  
+  .rail-summary-icon {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    color: rgb(255, 255, 255);
+    border-radius: 18px;
+  }
+
+  .rail-summary-card:nth-child(1) h2 {
+    color: #ef4444;
+  }
+  
+  .rail-summary-card:nth-child(2) h2 {
+    color: #f59e0b;
+  }
+  
+  .rail-summary-card:nth-child(3) h2 {
+    color: #22c55e;
+  }
+  
+  .rail-summary-card:nth-child(4) h2 {
+    color: #2563eb;
+  }
+  
+  /* =========================================================
+     3. Summary Icon Colour Variants
+     ========================================================= */
+  
+  .rail-red {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+  
+  .rail-yellow {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+  
+  .rail-green {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+  }
+  
+  .rail-blue {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+  }
+  
+  /* =========================================================
+     4. Main Rail Map Layout
+     ========================================================= */
+  
+  .rail-layout {
+    display: grid;
+    grid-template-columns: 2fr 420px;
+    gap: 28px;
+    padding: 0 30px 30px;
+    margin-top:12px;
+  }
+
+  
+  .rail-map-panel,
+  .rail-alerts-card {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  }
+  
+  /* =========================================================
+     5. Panel Headers
+     ========================================================= */
+  
+  .rail-map-header,
+  .panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+  
+  .rail-map-header h2,
+  .panel-title h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+  }
+  
+  .rail-map-header p,
+  .panel-title span {
+    color: #475569;
+    font-weight: 600;
+  }
+  
+  .rail-map-header button {
+    padding: 12px 18px;
+    color: white;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  
+
+  
+  
+  
+  /* =========================================================
+     6. Rail Map Image Area
+     ========================================================= */
+  
+  .rail-map-container {
+    position: relative;
+    overflow: visible;
+    border-radius: 24px;
+  }
+  
+  .rail-map-image {
+    border-radius: 24px;
+    display: block;
+    width: 100%;
+    height: 760px;
+    object-fit: cover;
+  }
+  
+  /* =========================================================
+     7. Map Alert Pins
+     ========================================================= */
+  
+  .map-alert-pin {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  
+  .map-pulse {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  
+  .map-alert-pin.critical .map-pulse {
+    background: #ef4444;
+  }
+  
+  .map-alert-pin.warning .map-pulse {
+    background: #f59e0b;
+  }
+  
+  .map-alert-pin.medium .map-pulse {
+    background: #fb923c;
+  }
+  
+  .map-alert-pin.safe .map-pulse {
+    background: #22c55e;
+  }
+  
+  /* =========================================================
+     8. Map Alert Popup
+     ========================================================= */
+  
+  .map-alert-popup {
+    position: absolute;
+    top: 28px;
+    left: 18px;
+    width: 200px;
+    padding: 16px;
+    color: rgb(255, 249, 249);
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(12px);
+    border:1px solid #e2e8f0;
+    box-shadow:0 18px 40px rgba(15,23,42,.15);
+    color:#0f172a;
+    border-radius: 18px;
+  }
+  
+  .map-alert-popup h3 {
+      color:#0f172a;
+      font-weight:800;
+  }
+
+
+  
+  .map-alert-popup p {
+    margin: 0 0 10px;
+    color:#64748b;
+  }
+  
+  .map-alert-popup span {
+    display: inline-flex;
+    padding: 6px 10px;
+    background:#fee2e2;
+    color:#dc2626;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  /* =========================================================
+     9. Alerts List
+     ========================================================= */
+  
+  .rail-alert-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 20px;
+  }
+  
+  .rail-alert-item h3 {
+    margin: 0 0 4px;
+    color: #0f172a;
+    font-weight: 800;
+  }
+  
+  .rail-alert-item p {
+    margin: 0;
+    color: #64748b;
+  }
+
+  
+  
+  /* =========================================================
+     10. Alert Dots
+     ========================================================= */
+  
+  .alert-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+  
+  .red-dot {
+    background: #ef4444;
+  }
+  
+  .yellow-dot {
+    background: #f59e0b;
+  }
+  
+  .orange-dot {
+    background: #fb923c;
+  }
+  
+  .green-dot {
+    background: #22c55e;
+  }
+  
+  /* =========================================================
+     11. Alert Border Colour Variants
+     ========================================================= */
+  
+  .critical-border {
+    border-left: 4px solid #ef4444;
+  }
+  
+  .warning-border {
+    border-left: 4px solid #f59e0b;
+  }
+  
+  .medium-border {
+    border-left: 4px solid #fb923c;
+  }
+  
+  .safe-border {
+    border-left: 4px solid #22c55e;
+  }
+
+
+  
+  /* =========================================================
+     12. Animations
+     ========================================================= */
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  
+    70% {
+      transform: scale(2.6);
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* =========================================================
+     13. Responsive Layout - Large Screens
+     ========================================================= */
+  
+  @media (max-width: 1400px) {
+    .rail-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* =========================================================
+     14. Responsive Layout - Tablets
+     ========================================================= */
+  
+  @media (max-width: 1100px) {
+    .rail-summary-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* =========================================================
+     15. Responsive Layout - Mobile
+     ========================================================= */
+  
+  @media (max-width: 850px) {
+    .rail-summary-grid {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  
+    .rail-layout {
+      padding: 0 20px 20px;
+    }
+  
+    .rail-map-image {
+      height: 500px;
+    }
+  
+    .topbar {
+      padding: 0 20px;
+    }
+  }
+  

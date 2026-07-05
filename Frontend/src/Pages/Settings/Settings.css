@@ -1,0 +1,610 @@
+/* =========================================================
+   Settings.css
+   Purpose: Organised and labelled stylesheet for consistent UI.
+
+   Sections:
+   - Settings grid
+   - Settings cards
+   - Form controls
+   - Switches
+   - Device rows
+   - Backup boxes
+   - Responsive rules
+   - Consistency overrides
+   ========================================================= */
+
+/* =========================================================
+   01. IMPORTS & GLOBAL SETUP
+   ========================================================= */
+
+/* =========================================================
+   06. LAYOUT
+   ========================================================= */
+   .settings-grid {
+    padding: 34px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  
+  
+  /* =========================================================
+     04. CONTENT
+     ========================================================= */
+  .settings-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 28px;
+    padding: 26px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  
+  .settings-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  
+  .settings-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    color: white;
+  }
+  
+  .settings-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .blue-bg {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+  }
+  
+  .red-bg {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+  }
+  
+  .yellow-bg {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+  }
+  
+  .green-bg {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+  }
+  
+  .settings-card-header h2 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    color: var(--text-dark);
+    font-weight: 800;
+  }
+  
+  .settings-card-header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  
+  .setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  }
+  
+  .setting-row:last-child {
+    border-bottom: none;
+  }
+  
+  .setting-row h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  
+  .setting-row p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  
+  /* =========================================================
+     14. INPUTS
+     ========================================================= */
+  .settings-select {
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    background: white;
+  }
+  
+  
+  /* =========================================================
+     15. SWITCHES
+     ========================================================= */
+  .switch {
+    position: relative;
+    width: 58px;
+    height: 32px;
+    display: inline-block;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    inset: 0;
+    background: #cbd5e1;
+    border-radius: 999px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 4px;
+    top: 4px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.25s;
+  }
+  
+  .switch input:checked + .slider {
+    background: #2563eb;
+  }
+  
+  .switch input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+  
+  
+  /* =========================================================
+     16. DEVICE ROWS
+     ========================================================= */
+  .device-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  }
+  
+  .device-row:last-child {
+    border-bottom: none;
+  }
+  
+  .device-row h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  
+  .device-row p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  
+  .device-row button,
+  .backup-box button {
+    border: none;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 11px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  
+  
+  /* =========================================================
+     17. BACKUP BOXES
+     ========================================================= */
+  .backup-box {
+    padding: 22px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+    margin-bottom: 18px;
+  }
+  
+  .backup-box.secondary {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  }
+  
+  .backup-box h3 {
+    margin: 0 0 8px;
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 800;
+  }
+  
+  .backup-box p {
+    margin: 0 0 18px;
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  
+  .encrypted-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  
+    background: #dcfce7;
+    color: #15803d;
+  
+    padding: 10px 14px;
+    border-radius: 12px;
+  
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  
+  /* =========================================================
+     Consistent UI System Overrides
+     Drop this at the END of each page CSS file, or import once
+     globally after the page CSS files.
+     ========================================================= */
+  
+  :root {
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --dark-blue: #031b4e;
+    --sidebar-end: #00112d;
+    --page-bg-top: #f8fbff;
+    --page-bg-bottom: #eef5ff;
+    --surface: rgba(255, 255, 255, 0.9);
+    --surface-strong: rgba(255, 255, 255, 0.94);
+    --border-soft: rgba(255, 255, 255, 0.6);
+    --border-muted: rgba(148, 163, 184, 0.22);
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.08);
+    --shadow-sidebar: 10px 0 30px rgba(0, 0, 0, 0.2);
+    --radius-lg: 24px;
+    --radius-xl: 28px;
+    --content-pad: 34px;
+    --topbar-height: 88px;
+  }
+  
+  html,
+  body,
+  #root {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .page,
+  .admin-page,
+  .fault-page,
+  .rail-page {
+    background:
+      radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+      linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg-bottom) 100%) !important;
+  }
+  
+  .sidebar,
+  .admin-sidebar,
+  .fault-sidebar {
+    width: 260px !important;
+    padding: 22px 18px !important;
+    background: linear-gradient(180deg, var(--dark-blue) 0%, var(--sidebar-end) 100%) !important;
+    box-shadow: var(--shadow-sidebar) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .logo-wrap,
+  .admin-logo-wrap,
+  .fault-logo-wrap {
+    margin-top: 8px !important;
+    margin-bottom: 18px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  .logo-wrap svg,
+  .admin-logo-wrap svg,
+  .fault-logo-wrap svg {
+    width: 82px !important;
+    height: 82px !important;
+    padding: 18px !important;
+    border-radius: 28px !important;
+    background: rgba(37, 99, 235, 0.35) !important;
+    color: white !important;
+  }
+  
+  .sidebar h2,
+  .admin-sidebar h2,
+  .fault-sidebar h2 {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 28px !important;
+    color: white !important;
+  }
+  
+  .menu-item,
+  .admin-menu-item,
+  .fault-menu-item {
+    min-height: 48px !important;
+    margin: 9px 0 !important;
+    padding: 13px 16px !important;
+    border-radius: 16px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    text-decoration: none !important;
+  }
+  
+  .menu-item:hover,
+  .admin-menu-item:hover,
+  .fault-menu-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+  }
+  
+  .menu-item.active,
+  .admin-menu-item.active,
+  .fault-menu-item.active {
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark)) !important;
+    color: white !important;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35) !important;
+  }
+  
+  .content,
+  .admin-content,
+  .fault-content,
+  .report-new-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow-y: auto !important;
+  }
+  
+  .topbar,
+  .admin-topbar,
+  .fault-topbar {
+    height: var(--topbar-height) !important;
+    padding: 0 var(--content-pad) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+  }
+  
+  .topbar h1,
+  .admin-topbar h1,
+  .fault-topbar h1,
+  .report-top h1,
+  .rail-map-header h2,
+  .panel-title h2,
+  .settings-card-header h2,
+  .notifications-header h2,
+  .admin-table-header h2 {
+    color: var(--text-dark) !important;
+    font-weight: 800 !important;
+  }
+  
+  .stat-card,
+  .admin-stat-card,
+  .fault-stat-card,
+  .notification-stat-card,
+  .rail-summary-card,
+  .settings-card,
+  .report-container,
+  .rail-map-panel,
+  .rail-alerts-card,
+  .fault-panel,
+  .critical-table-card,
+  .admin-table-card,
+  .notification-card {
+    background: var(--surface) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-card) !important;
+  }
+  
+  .stats-section,
+  .admin-stats-grid,
+  .fault-stats-section,
+  .notification-stats,
+  .rail-summary-grid {
+    gap: 24px !important;
+    padding: 32px var(--content-pad) 0 !important;
+  }
+  
+  .stat-card,
+  .admin-stat-card,
+  .fault-stat-card,
+  .notification-stat-card,
+  .rail-summary-card {
+    min-height: 160px !important;
+    padding: 22px !important;
+  }
+  
+  .stat-card h2,
+  .admin-stat-text h2,
+  .fault-stat-card h2,
+  .notification-stat-card h2,
+  .rail-summary-card h2,
+  .severity-card h2 {
+    font-size: 52px !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+    margin: 8px 0 !important;
+  }
+  
+  .stat-card p,
+  .admin-stat-text p,
+  .fault-stat-card p,
+  .notification-stat-card p,
+  .rail-summary-card p,
+  .settings-card-header p,
+  .notification-content p,
+  .rail-alert-item p,
+  .report-group label {
+    color: var(--text-muted);
+  }
+  
+  button,
+  .create-user-button,
+  .report-fault-btn,
+  .notifications-header button,
+  .rail-map-header button,
+  .device-row button,
+  .backup-box button,
+  .submit-btn {
+    border-radius: 14px !important;
+    font-weight: 700 !important;
+    transition: 0.2s ease !important;
+  }
+  
+  .create-user-button,
+  .report-fault-btn,
+  .notifications-header button,
+  .rail-map-header button,
+  .device-row button,
+  .backup-box button,
+  .submit-btn {
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark)) !important;
+    color: white !important;
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24) !important;
+  }
+  
+  .create-user-button:hover,
+  .report-fault-btn:hover,
+  .notifications-header button:hover,
+  .rail-map-header button:hover,
+  .device-row button:hover,
+  .backup-box button:hover,
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.28) !important;
+  }
+  
+  .report-new-content {
+    padding: var(--content-pad) !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    background:
+      radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+      linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg-bottom) 100%) !important;
+  }
+  
+  .report-container {
+    max-width: 620px !important;
+    padding: 34px !important;
+  }
+  
+  .report-top h1 {
+    font-size: 28px !important;
+  }
+  
+  .report-group label {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+  }
+  
+  .tool-input,
+  .report-group select,
+  .location-box,
+  .report-group textarea,
+  .settings-select {
+    border: 1px solid #dbe2ea !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    font-size: 14px !important;
+  }
+  
+  .tool-input,
+  .report-group select,
+  .location-box {
+    height: 48px !important;
+  }
+  
+  .submit-btn {
+    height: 52px !important;
+    font-size: 16px !important;
+  }
+  
+  
+  /* =========================================================
+     90. MOBILE
+     ========================================================= */
+  @media (max-width: 1100px) {
+    .stats-section,
+    .admin-stats-grid,
+    .fault-stats-section,
+    .notification-stats,
+    .rail-summary-grid,
+    .settings-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  
+    .rail-layout,
+    .fault-main-grid,
+    .upper-section {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar,
+    .admin-sidebar,
+    .fault-sidebar {
+      width: 86px !important;
+      padding: 18px 10px !important;
+    }
+  
+    .menu-item span,
+    .admin-menu-item span,
+    .fault-menu-item span,
+    .sidebar h2,
+    .admin-sidebar h2,
+    .fault-sidebar h2 {
+      display: none !important;
+    }
+  
+    .topbar,
+    .admin-topbar,
+    .fault-topbar {
+      padding: 0 18px !important;
+    }
+  
+    .stats-section,
+    .admin-stats-grid,
+    .fault-stats-section,
+    .notification-stats,
+    .rail-summary-grid,
+    .settings-grid {
+      grid-template-columns: 1fr !important;
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+    }
+  }
+  

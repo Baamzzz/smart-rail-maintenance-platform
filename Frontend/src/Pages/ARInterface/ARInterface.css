@@ -1,0 +1,558 @@
+/* ARInterface.css */
+
+* {
+  box-sizing: border-box;
+}
+
+.ar-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #050816;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* TOPBAR */
+
+.ar-topbar {
+  height: 76px;
+  background: rgba(10, 15, 35, 0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+}
+
+.ar-topbar h1 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.ar-back-btn {
+  border: none;
+  background: rgba(255,255,255,0.08);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+}
+
+.ar-train-icon {
+  font-size: 28px;
+}
+
+/* ENGINEER BAR */
+
+.ar-engineer-bar {
+  height: 64px;
+  background: rgba(15, 23, 42, 0.95);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.ar-engineer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ar-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+
+  display: grid;
+  place-items: center;
+}
+
+.ar-role-badge {
+  background: #2563eb;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* CAMERA */
+
+.ar-camera-container {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ar-camera-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ar-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.22);
+}
+
+/* TOP OVERLAY */
+
+.ar-overlay-top {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ar-info-card {
+  background: rgba(0,0,0,0.72);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 14px;
+
+  padding: 12px 14px;
+
+  min-width: 230px;
+
+  backdrop-filter: blur(12px);
+}
+
+.ar-info-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+}
+
+.ar-info-left strong {
+  color: #22c55e;
+}
+
+/* FAULT */
+
+.fault-marker {
+  position: absolute;
+
+  top: 42%;
+  left: 32%;
+
+  width: 42px;
+  height: 42px;
+
+  border: 4px solid #ef4444;
+  border-radius: 50%;
+
+  box-shadow: 0 0 20px rgba(239,68,68,0.9);
+}
+
+.fault-line {
+  position: absolute;
+
+  top: 45%;
+  left: 38%;
+
+  width: 110px;
+  height: 4px;
+
+  background: #ef4444;
+}
+
+.fault-box {
+  position: absolute;
+
+  top: 35%;
+  left: 58%;
+
+  width: 260px;
+
+  background: rgba(10, 10, 10, 0.88);
+
+  border: 2px solid #ef4444;
+
+  border-radius: 18px;
+
+  padding: 16px;
+
+  backdrop-filter: blur(12px);
+}
+
+.fault-box h3 {
+  color: #ef4444;
+  margin-bottom: 10px;
+}
+
+.high-severity {
+  color: #ef4444;
+  font-weight: 800;
+}
+
+.repair-box {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.repair-box h4 {
+  margin-bottom: 8px;
+}
+
+.repair-box ul {
+  padding-left: 18px;
+  line-height: 24px;
+}
+
+/* TOOL */
+
+.tool-marker {
+  position: absolute;
+
+  bottom: 28%;
+  left: 14%;
+
+  width: 42px;
+  height: 42px;
+
+  border: 4px solid #facc15;
+  border-radius: 50%;
+
+  box-shadow: 0 0 20px rgba(250,204,21,0.9);
+}
+
+.tool-line {
+  position: absolute;
+
+  bottom: 25%;
+  left: 20%;
+
+  width: 110px;
+  height: 4px;
+
+  background: #facc15;
+}
+
+.tool-box {
+  position: absolute;
+
+  bottom: 17%;
+  left: 32%;
+
+  width: 250px;
+
+  background: rgba(10,10,10,0.88);
+
+  border: 2px solid #facc15;
+
+  border-radius: 18px;
+
+  padding: 16px;
+}
+
+.tool-box h3 {
+  color: #facc15;
+  margin-bottom: 10px;
+}
+
+.tool-ok {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* HAZARD */
+
+.hazard-popup {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 260px;
+
+  background: rgba(239,68,68,0.14);
+
+  border: 1px solid rgba(239,68,68,0.4);
+
+  border-radius: 16px;
+
+  padding: 16px;
+
+  backdrop-filter: blur(10px);
+}
+
+.hazard-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #ef4444;
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+/* SAFETY */
+
+.safety-gear-box {
+  position: absolute;
+
+  bottom: 22px;
+  right: 18px;
+
+  width: 260px;
+
+  background: rgba(15,23,42,0.92);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 18px;
+
+  padding: 16px;
+}
+
+.safety-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  font-weight: 700;
+}
+
+.safety-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gear {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.gear.ok {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+}
+
+.gear.missing {
+  background: rgba(239,68,68,0.14);
+  color: #ef4444;
+}
+
+/* VOICE */
+
+.voice-box {
+  position: absolute;
+
+  bottom: 22px;
+  left: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(37,99,235,0.18);
+
+  border: 1px solid rgba(37,99,235,0.4);
+
+  border-radius: 14px;
+
+  padding: 12px 16px;
+
+  font-weight: 700;
+}
+
+/* BOTTOM NAV */
+
+.ar-bottom-nav {
+  height: 88px;
+
+  background: rgba(10,15,35,0.96);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ar-nav-btn {
+  border: none;
+  background: transparent;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ar-nav-btn.active {
+  background: rgba(37,99,235,0.16);
+  color: #60a5fa;
+}
+
+/* AR LAUNCH SECTION */
+
+.ar-launch-section {
+  padding: 20px 24px 16px;
+  background: rgba(10, 15, 35, 0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.ar-launch-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e0e6ff;
+  margin: 0 0 4px;
+}
+
+.ar-launch-section > p {
+  font-size: 0.8rem;
+  color: #6b8cba;
+  margin: 0 0 14px;
+}
+
+.ar-launch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ar-launch-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #e0e6ff;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.ar-launch-card:hover {
+  transform: translateY(-2px);
+}
+
+.ar-launch-card.fault {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.ar-launch-card.tools {
+  background: rgba(0, 180, 255, 0.08);
+  border-color: rgba(0, 180, 255, 0.3);
+}
+
+.ar-launch-card h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+
+.ar-launch-card p {
+  font-size: 0.72rem;
+  color: #6b8cba;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ar-launch-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+  margin-top: 4px;
+}
+
+.ar-launch-badge.tools {
+  background: rgba(0, 180, 255, 0.18);
+  color: #38bdf8;
+}
+
+.ar-ext-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+.ar-markers-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: rgba(100, 200, 255, 0.9);
+  text-decoration: none;
+  border: 1px solid rgba(100, 200, 255, 0.25);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .fault-box,
+  .tool-box,
+  .hazard-popup,
+  .safety-gear-box {
+    width: 200px;
+    font-size: 12px;
+  }
+
+  .fault-box {
+    left: 42%;
+  }
+
+  .tool-box {
+    left: 24%;
+  }
+
+  .ar-topbar h1 {
+    font-size: 20px;
+  }
+
+  .ar-engineer-left {
+    font-size: 14px;
+  }
+}
+
+/* Functional AR buttons */
+button.ar-launch-card, button.ar-markers-link { font-family: inherit; cursor: pointer; }
+button.ar-launch-card { text-align: left; }
+.ar-bottom-nav.single-scan { grid-template-columns: 1fr; }

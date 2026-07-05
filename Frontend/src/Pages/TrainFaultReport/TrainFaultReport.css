@@ -1,0 +1,748 @@
+/* =========================================================
+   TrainFaultReport.css
+   Purpose: Organised and labelled stylesheet for consistent UI.
+
+   Sections:
+   - Report page layout
+   - Container
+   - Header
+   - Form groups
+   - Inputs
+   - Location field
+   - Severity buttons
+   - Attachment button
+   - Submit button
+   - Responsive rules
+   - Consistency overrides
+   ========================================================= */
+
+/* =========================================================
+   01. IMPORTS & GLOBAL SETUP
+   ========================================================= */
+
+/* =========================================================
+   02. PAGE LAYOUT
+   ========================================================= */
+   .report-new-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 34px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  /* =========================================================
+     00. CONTAINER
+     ========================================================= */
+  .report-container {
+    width: 100%;
+    max-width: 620px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 34px;
+    padding: 34px;
+    box-shadow: 0 20px 50px rgba(15,23,42,0.08);
+  }
+  
+  
+  /* =========================================================
+     05. TOP BAR
+     ========================================================= */
+  .report-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .report-top h1 {
+    margin: 0;
+    font-size: 34px;
+    color: #111827;
+  }
+  
+  .back-btn {
+    position: absolute;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border: none;
+    background: #f1f5f9;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  
+  .report-train-icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+    color: #111827;
+  }
+  
+  
+  /* =========================================================
+     13. FORM
+     ========================================================= */
+  .report-form {
+    margin-top: 24px;
+  }
+  
+  .report-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+  
+  .report-group label {
+    margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #111827;
+  }
+  
+  
+  /* =========================================================
+     14. INPUTS
+     ========================================================= */
+  .report-group select,
+  .location-box,
+  .report-group textarea {
+    border: 2px solid #d4d4d8;
+    border-radius: 18px;
+    background: #f8fafc;
+    font-size: 18px;
+  }
+  
+  .report-group select {
+    height: 64px;
+    padding: 0 18px;
+    outline: none;
+  }
+  
+  
+  /* =========================================================
+     15. LOCATION
+     ========================================================= */
+  .location-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+    height: 64px;
+  }
+  
+  .location-box input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .report-group textarea {
+    padding: 18px;
+    resize: none;
+    outline: none;
+  }
+  
+  
+  /* =========================================================
+     17. SEVERITY
+     ========================================================= */
+  .severity-buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .severity-buttons button {
+    flex: 1;
+    height: 58px;
+    border-radius: 16px;
+    border: 2px solid #d4d4d8;
+    background: #f3f4f6;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .severity-buttons button.active.low {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #166534;
+  }
+  
+  .severity-buttons button.active.medium {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    color: #92400e;
+  }
+  
+  .severity-buttons button.active.high {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+  }
+  
+  
+  /* =========================================================
+     18. ATTACH
+     ========================================================= */
+  .attach-btn {
+    height: 64px;
+    border-radius: 18px;
+    border: 2px solid #d4d4d8;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  
+  /* =========================================================
+     19. SUBMIT
+     ========================================================= */
+  .submit-btn {
+    width: 100%;
+    height: 68px;
+    border-radius: 18px;
+    border: none;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 18px 40px rgba(37,99,235,0.25);
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  
+  /* =========================================================
+     90. MOBILE
+     ========================================================= */
+  @media (max-width:768px) {
+  
+    .report-new-content {
+      padding: 0;
+    }
+  
+    .report-container {
+      border-radius: 0;
+      min-height: 100vh;
+      padding: 22px;
+    }
+  
+    .report-top h1 {
+      font-size: 28px;
+    }
+  
+    .report-group label {
+      font-size: 22px;
+    }
+  
+    .severity-buttons {
+      flex-direction: row;
+    }
+  
+    .severity-buttons button {
+      font-size: 16px;
+    }
+  
+    .submit-btn {
+      font-size: 22px;
+    }
+  }
+  
+  /* =========================================================
+     Consistent UI System Overrides
+     Drop this at the END of each page CSS file, or import once
+     globally after the page CSS files.
+     ========================================================= */
+  
+  :root {
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --dark-blue: #031b4e;
+    --sidebar-end: #00112d;
+    --page-bg-top: #f8fbff;
+    --page-bg-bottom: #eef5ff;
+    --surface: rgba(255, 255, 255, 0.9);
+    --surface-strong: rgba(255, 255, 255, 0.94);
+    --border-soft: rgba(255, 255, 255, 0.6);
+    --border-muted: rgba(148, 163, 184, 0.22);
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.08);
+    --shadow-sidebar: 10px 0 30px rgba(0, 0, 0, 0.2);
+    --radius-lg: 24px;
+    --radius-xl: 28px;
+    --content-pad: 34px;
+    --topbar-height: 88px;
+  }
+  
+  html,
+  body,
+  #root {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .page,
+  .admin-page,
+  .fault-page,
+  .rail-page {
+    background:
+      radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+      linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg-bottom) 100%) !important;
+  }
+  
+  .sidebar,
+  .admin-sidebar,
+  .fault-sidebar {
+    width: 260px !important;
+    padding: 22px 18px !important;
+    background: linear-gradient(180deg, var(--dark-blue) 0%, var(--sidebar-end) 100%) !important;
+    box-shadow: var(--shadow-sidebar) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .logo-wrap,
+  .admin-logo-wrap,
+  .fault-logo-wrap {
+    margin-top: 8px !important;
+    margin-bottom: 18px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  .logo-wrap svg,
+  .admin-logo-wrap svg,
+  .fault-logo-wrap svg {
+    width: 82px !important;
+    height: 82px !important;
+    padding: 18px !important;
+    border-radius: 28px !important;
+    background: rgba(37, 99, 235, 0.35) !important;
+    color: white !important;
+  }
+  
+  .sidebar h2,
+  .admin-sidebar h2,
+  .fault-sidebar h2 {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 28px !important;
+    color: white !important;
+  }
+  
+  .menu-item,
+  .admin-menu-item,
+  .fault-menu-item {
+    min-height: 48px !important;
+    margin: 9px 0 !important;
+    padding: 13px 16px !important;
+    border-radius: 16px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    text-decoration: none !important;
+  }
+  
+  .menu-item:hover,
+  .admin-menu-item:hover,
+  .fault-menu-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+  }
+  
+  .menu-item.active,
+  .admin-menu-item.active,
+  .fault-menu-item.active {
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark)) !important;
+    color: white !important;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35) !important;
+  }
+  
+  .content,
+  .admin-content,
+  .fault-content,
+  .report-new-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow-y: auto !important;
+  }
+  
+  .topbar,
+  .admin-topbar,
+  .fault-topbar {
+    height: var(--topbar-height) !important;
+    padding: 0 var(--content-pad) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+  }
+  
+  .topbar h1,
+  .admin-topbar h1,
+  .fault-topbar h1,
+  .report-top h1,
+  .rail-map-header h2,
+  .panel-title h2,
+  .settings-card-header h2,
+  .notifications-header h2,
+  .admin-table-header h2 {
+    color: var(--text-dark) !important;
+    font-weight: 800 !important;
+  }
+  
+  .stat-card,
+  .admin-stat-card,
+  .fault-stat-card,
+  .notification-stat-card,
+  .rail-summary-card,
+  .settings-card,
+  .report-container,
+  .rail-map-panel,
+  .rail-alerts-card,
+  .fault-panel,
+  .critical-table-card,
+  .admin-table-card,
+  .notification-card {
+    background: var(--surface) !important;
+    border: 1px solid var(--border-soft) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-card) !important;
+  }
+  
+  .stats-section,
+  .admin-stats-grid,
+  .fault-stats-section,
+  .notification-stats,
+  .rail-summary-grid {
+    gap: 24px !important;
+    padding: 32px var(--content-pad) 0 !important;
+  }
+  
+  .stat-card,
+  .admin-stat-card,
+  .fault-stat-card,
+  .notification-stat-card,
+  .rail-summary-card {
+    min-height: 160px !important;
+    padding: 22px !important;
+  }
+  
+  .stat-card h2,
+  .admin-stat-text h2,
+  .fault-stat-card h2,
+  .notification-stat-card h2,
+  .rail-summary-card h2,
+  .severity-card h2 {
+    font-size: 52px !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+    margin: 8px 0 !important;
+  }
+  
+  .stat-card p,
+  .admin-stat-text p,
+  .fault-stat-card p,
+  .notification-stat-card p,
+  .rail-summary-card p,
+  .settings-card-header p,
+  .notification-content p,
+  .rail-alert-item p,
+  .report-group label {
+    color: var(--text-muted);
+  }
+  
+  button,
+  .create-user-button,
+  .report-fault-btn,
+  .notifications-header button,
+  .rail-map-header button,
+  .device-row button,
+  .backup-box button,
+  .submit-btn {
+    border-radius: 14px !important;
+    font-weight: 700 !important;
+    transition: 0.2s ease !important;
+  }
+  
+  .create-user-button,
+  .report-fault-btn,
+  .notifications-header button,
+  .rail-map-header button,
+  .device-row button,
+  .backup-box button,
+  .submit-btn {
+    background: linear-gradient(90deg, var(--blue), var(--blue-dark)) !important;
+    color: white !important;
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24) !important;
+  }
+  
+  .create-user-button:hover,
+  .report-fault-btn:hover,
+  .notifications-header button:hover,
+  .rail-map-header button:hover,
+  .device-row button:hover,
+  .backup-box button:hover,
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.28) !important;
+  }
+  
+  .report-new-content {
+    padding: var(--content-pad) !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    background:
+      radial-gradient(circle at top right, #dbeafe 0%, transparent 35%),
+      linear-gradient(180deg, var(--page-bg-top) 0%, var(--page-bg-bottom) 100%) !important;
+  }
+  
+  .report-container {
+    max-width: 620px !important;
+    padding: 34px !important;
+  }
+  
+  .report-top h1 {
+    font-size: 28px !important;
+  }
+  
+  .report-group label {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+  }
+  
+  .tool-input,
+  .report-group select,
+  .location-box,
+  .report-group textarea,
+  .settings-select {
+    border: 1px solid #dbe2ea !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    font-size: 14px !important;
+  }
+  
+  .tool-input,
+  .report-group select,
+  .location-box {
+    height: 48px !important;
+  }
+  
+  .submit-btn {
+    height: 52px !important;
+    font-size: 16px !important;
+  }
+  
+  @media (max-width: 1100px) {
+    .stats-section,
+    .admin-stats-grid,
+    .fault-stats-section,
+    .notification-stats,
+    .rail-summary-grid,
+    .settings-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  
+    .rail-layout,
+    .fault-main-grid,
+    .upper-section {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar,
+    .admin-sidebar,
+    .fault-sidebar {
+      width: 86px !important;
+      padding: 18px 10px !important;
+    }
+  
+    .menu-item span,
+    .admin-menu-item span,
+    .fault-menu-item span,
+    .sidebar h2,
+    .admin-sidebar h2,
+    .fault-sidebar h2 {
+      display: none !important;
+    }
+  
+    .topbar,
+    .admin-topbar,
+    .fault-topbar {
+      padding: 0 18px !important;
+    }
+  
+    .stats-section,
+    .admin-stats-grid,
+    .fault-stats-section,
+    .notification-stats,
+    .rail-summary-grid,
+    .settings-grid {
+      grid-template-columns: 1fr !important;
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+    }
+  }
+  
+
+.report-message {
+  margin: -10px 0 18px;
+  color: #e11d48;
+  font-weight: 800;
+  text-align: center;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* ===== Full-screen mobile report page ===== */
+@media (max-width:768px){
+  .report-new-content{
+    padding:0 !important;
+    margin:0 !important;
+    width:100% !important;
+  }
+
+  .report-container{
+    width:100% !important;
+    max-width:none !important;
+    min-height:100dvh !important;
+    border-radius:0 !important;
+    margin:0 !important;
+    padding:24px 20px calc(40px + env(safe-area-inset-bottom)) !important;
+    box-shadow:none !important;
+  }
+
+  .report-new-content > .mobile-menu-btn{
+    display:none !important;
+  }
+
+  .page > .sidebar{
+    transform:translateX(-110%) !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+  }
+
+  .page > .sidebar.mobile-open{
+    transform:translateX(0)!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+  }
+
+  .report-top{
+    padding-top:max(8px,env(safe-area-inset-top));
+  }
+}
+
+
+/* Final report page mobile fullscreen fix */
+.hidden-file-input { display: none; }
+@media (max-width: 768px) {
+  .report-full-page {
+    display: block !important;
+    width: 100vw !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%) !important;
+  }
+  .report-full-page > .sidebar,
+  .report-full-page > .sidebar.mobile-open,
+  .report-full-page > .sidebar-overlay,
+  .report-full-page .mobile-menu-btn {
+    display: none !important;
+  }
+  .report-full-page .report-new-content {
+    display: block !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  .report-full-page .report-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 24px 20px calc(42px + env(safe-area-inset-bottom)) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: rgba(255,255,255,.94) !important;
+  }
+  .report-full-page .report-top { min-height: 52px !important; }
+  .report-full-page .report-top h1 {
+    font-size: 28px !important;
+    line-height: 1.05 !important;
+    padding-inline: 58px !important;
+    text-align: center !important;
+  }
+  .report-full-page .back-btn {
+    width: 48px !important;
+    height: 48px !important;
+    left: 0 !important;
+  }
+  .report-full-page .report-train-icon { margin-top: 20px !important; }
+  .report-full-page .report-train-icon svg { width: 74px !important; height: 74px !important; }
+  .report-full-page .report-form { margin-top: 22px !important; }
+  .report-full-page .report-group { margin-bottom: 20px !important; }
+  .report-full-page .report-group label {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    margin-bottom: 9px !important;
+  }
+  .report-full-page .report-group select,
+  .report-full-page .location-box,
+  .report-full-page .report-group textarea {
+    width: 100% !important;
+    min-height: 52px !important;
+    font-size: 16px !important;
+    border-radius: 16px !important;
+  }
+  .report-full-page .severity-buttons {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .report-full-page .severity-buttons button {
+    width: 100% !important;
+    height: 54px !important;
+    font-size: 16px !important;
+  }
+  .report-full-page .attach-btn,
+  .report-full-page .submit-btn {
+    width: 100% !important;
+    height: 56px !important;
+    font-size: 17px !important;
+    border-radius: 16px !important;
+  }
+}

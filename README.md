@@ -8,7 +8,7 @@ Originally developed as part of a university software engineering group project,
 
 ## 📹 Project Demonstration
 
-[📹 Watch Demo Video](./screenshots/Functionality-Video.mp4)
+https://github.com/user-attachments/assets/d5157316-0e4a-4d7a-b1a2-adf631148c6a
 
 ---
 

@@ -250,7 +250,7 @@ SQL Server Database
 ## Administration
 
 ![Admin](screenshots/11-AdminPanel1.png)
-![Admin2](screenshots/11-AdminPanel2.png)
+![Admin2](screenshots/12-AdminPanel2.png)
 
 ---
 
